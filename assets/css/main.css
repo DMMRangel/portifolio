@@ -1,2 +1,14 @@
 @import "tailwindcss";
 @import "@nuxt/ui";
+
+@theme static {
+  --color-background: rgba(22, 22, 22, 1);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-background);
+}
