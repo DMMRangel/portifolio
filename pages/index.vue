@@ -95,14 +95,14 @@ const items = ref([
         >
           # GitHub
         </UButton>
-        <UDropdownMenu
+        <!-- <UDropdownMenu
           :items="items"
           :ui="{
             content: 'w-fit'
           }"
         >
           <UButton icon="i-lucide:languages" size="xl" color="primary" variant="link"  class="cursor-pointer"/>
-        </UDropdownMenu>
+        </UDropdownMenu> -->
       </div>
     </nav>
   </header>
@@ -159,15 +159,18 @@ const items = ref([
         :class="{ 'text-primary font-bold': activeSection === 'contato' }"
       ># Contato</h3>
       <p class="text-muted">Entre em contato comigo através das redes sociais.</p>
-            <div class="flex gap-8 items-center">
-        <Icon name="devicon:vuejs" class="text-success" size="42" />
-        <Icon name="devicon:react" class="text-success" size="42" />
-        <Icon name="devicon:dotnetcore" class="text-success" size="42" />
-        <Icon name="devicon:nestjs" class="text-success" size="42" />
-        <Icon name="devicon:javascript" class="text-success" size="42" />
-        <Icon name="devicon:csharp" class="text-success" size="42" />
+      <div class="flex gap-8 items-center py-8">
+        <a href="#">
+          <Icon name="iconoir:whatsapp-solid" class="text-success" size="42" />
+        </a>
+        <a href="https://www.linkedin.com/in/dmmrangel/" target="_blank">
+          <Icon name="entypo-social:linkedin-with-circle" class="text-success" size="42" />
+        </a>
+        <a href="https://github.com/DMMRangel" target="_blank">
+          <Icon name="octicon:mark-github-16" class="text-success" size="42" />
+        </a>
       </div>
-      <div class="h-[25vh]"></div>
+      <!-- <div class="h-[25vh]"></div> -->
     </section>
   </main>
 
