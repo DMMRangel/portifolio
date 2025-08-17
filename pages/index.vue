@@ -1,15 +1,16 @@
 <script setup lang="ts">
 import { ref } from 'vue'
+import HomeCards from './compontents/HomeCards.vue';
 
 const activeSection = ref<string | null>('inicio')
 
 const setActiveSection = (section: string) => {
-  console.log(section);
   if (section != null) {
-    console.log("if section");
     activeSection.value = section;
   }
 }
+
+const urlCurriculo = "https://rvferte9i4hfaufe.public.blob.vercel-storage.com/Daniel%20Rangel%20-%20Curr%C3%ADculo%202025%20-%20Full%20Stack.pdf";
 
 const items = ref([
   {
@@ -107,8 +108,8 @@ const items = ref([
     </nav>
   </header>
 
-  <main class="flex flex-col gap-8 max-w-6xl mx-auto">
-    <section class="flex flex-col items-center gap-8 mb-8 mt-25">
+  <main class="flex flex-col gap-20 max-w-6xl mx-auto">
+    <section class="flex flex-col items-center gap-20 mt-25">
       <NuxtImg
         src="https://github.com/DMMRangel.png"
         width="200"
@@ -127,29 +128,34 @@ const items = ref([
         <Icon name="devicon:csharp" class="text-success" size="42" />
       </div>
     </section>
-    <section class="flex justify-center">
-      <p class="tracking-tight text-pretty text-xl text-shadow-lg px-6 max-w-3xl text-justify">
-        Sou desenvolvedor com mais de 3 anos de experiência, focado em criar interfaces modernas, performáticas e acessíveis. Tenho visão de produto, boa comunicação com times multidisciplinares e participação ativa em rotinas ágeis. Busco sempre escrever código limpo e escalável, e estou em constante evolução, pronto para encarar novos desafios e contribuir com soluções de impacto!
-      </p>
+
+    <!-- Home Cards -->
+    <section class="flex flex-col justify-center">
+      <HomeCards />
     </section>
+
+    <!-- Trabalhos -->
     <section>
       <h3
         id="trabalhos"
         class="text-2xl font-bold"
         :class="{ 'text-primary font-bold': activeSection === 'trabalhos' }"
       ># Trabalhos</h3>
-      <p class="text-muted">Aqui estão alguns dos meus trabalhos mais recentes.</p>
-      <div class="h-[25vh]"></div>
+      <p class="text-muted">
+        Em breve.
+      </p>
+      <div class="h-[10vh]"></div>
     </section>
 
-    <section>
-      <h3
-        id="curriculo"
-        class="text-2xl font-bold"
-        :class="{ 'text-primary font-bold': activeSection === 'curriculo' }"
-      ># Currículo</h3>
-      <p class="text-muted">Saque meu currículo aí vá.</p>
-      <div class="h-[25vh]"></div>
+    <section class="flex items-center gap-4">
+      <div>
+        <h3
+          id="curriculo"
+          class="text-2xl font-bold"
+          :class="{ 'text-primary font-bold': activeSection === 'curriculo' }"
+        ># Currículo</h3>
+      </div>
+      <UButton variant="soft" :href="urlCurriculo" target="_blank">Visualizar</UButton>
     </section>
 
     <section>
@@ -160,9 +166,9 @@ const items = ref([
       ># Contato</h3>
       <p class="text-muted">Entre em contato comigo através das redes sociais.</p>
       <div class="flex gap-8 items-center py-8">
-        <a href="#">
+        <!-- <a href="#">
           <Icon name="iconoir:whatsapp-solid" class="text-success" size="42" />
-        </a>
+        </a> -->
         <a href="https://www.linkedin.com/in/dmmrangel/" target="_blank">
           <Icon name="entypo-social:linkedin-with-circle" class="text-success" size="42" />
         </a>
