@@ -5,9 +5,7 @@ import HomeCards from './compontents/HomeCards.vue';
 const activeSection = ref<string | null>('inicio')
 
 const setActiveSection = (section: string) => {
-  console.log(section);
   if (section != null) {
-    console.log("if section");
     activeSection.value = section;
   }
 }
@@ -110,8 +108,8 @@ const items = ref([
     </nav>
   </header>
 
-  <main class="flex flex-col gap-8 max-w-6xl mx-auto">
-    <section class="flex flex-col items-center gap-8 mt-25">
+  <main class="flex flex-col gap-20 max-w-6xl mx-auto">
+    <section class="flex flex-col items-center gap-20 mt-25">
       <NuxtImg
         src="https://github.com/DMMRangel.png"
         width="200"
@@ -130,17 +128,23 @@ const items = ref([
         <Icon name="devicon:csharp" class="text-success" size="42" />
       </div>
     </section>
+
+    <!-- Home Cards -->
     <section class="flex flex-col justify-center">
       <HomeCards />
     </section>
+
+    <!-- Trabalhos -->
     <section>
       <h3
         id="trabalhos"
         class="text-2xl font-bold"
         :class="{ 'text-primary font-bold': activeSection === 'trabalhos' }"
       ># Trabalhos</h3>
-      <p class="text-muted">Aqui estão alguns dos meus trabalhos mais recentes.</p>
-      <div class="h-[25vh]"></div>
+      <p class="text-muted">
+        Em breve.
+      </p>
+      <div class="h-[10vh]"></div>
     </section>
 
     <section class="flex items-center gap-4">
@@ -152,7 +156,6 @@ const items = ref([
         ># Currículo</h3>
       </div>
       <UButton variant="soft" :href="urlCurriculo" target="_blank">Visualizar</UButton>
-      <!-- <div class="h-[25vh]"></div> -->
     </section>
 
     <section>
